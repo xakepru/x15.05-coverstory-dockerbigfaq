@@ -1,0 +1,13 @@
+[Unit]
+Description=MySQL container
+Author=Me
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a mysql
+ExecStop=/usr/bin/docker stop mysql
+
+[Install]
+WantedBy=local.target
+

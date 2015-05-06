@@ -1,0 +1,10 @@
+web:
+    image: example/www
+    command: /usr/sbin/httpd -DFOREGROUND
+links:
+    - db
+volumes:
+    - /root/html:/var/www/html
+db:
+    image: example/mysql
+    command: /usr/bin/mysqld_safe --bind-address=0.0.0.0
